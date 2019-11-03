@@ -8,4 +8,4 @@ before_install:
 
 # commands for running tests
 script:
-  - docker run razvan/react-docker npm run test -- --coverage
+  - docker run  -e CI=true  razvan/react-docker  npm run test
