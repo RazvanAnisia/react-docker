@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+# what do run before the tests
+before_install:
+  - docker build  -t  razvan/react-docker -f Dockerfile.dev .
+
+# commands for running tests
+script:
+  - docker run razvan/react-docker npm run test -- --coverage
